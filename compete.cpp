@@ -7,20 +7,34 @@
 using namespace std;
 
 
-			bfsAdvance(vector<int> adj,unordered_map<int,bool> &visited,vector<int> ans,int node){
-				
-			}
-
-vector<int> bfsOfGraph(int V, vector<int> adj[])
+int maxWater(int arr[], int n)
 {
-	unordered_map<int,bool> visited;
-	vector<int> ans;
-	for(int i=0;i<V;i++){
-		if(!visited[i])
-	}
+    // To store the maximum water
+    // that can be stored
+    int res = 0;
+ 
+    // For every element of the array
+    for (int i = 1; i < n - 1; i++) {
+ 
+        // Find the maximum element on its left
+        int left = arr[i];
+        for (int j = 0; j < i; j++)
+            left = max(left, arr[j]);
+ 
+        // Find the maximum element on its right
+        int right = arr[i];
+        for (int j = i + 1; j < n; j++)
+            right = max(right, arr[j]);
+ 
+        // Update the maximum water
+        res = res + (min(left, right) - arr[i]);
+    }
+ 
+    return res;
 }
 
 int main()
-{	
+{
+	int arr[5]={1,2,3,4,5};
 	return 0;
 }
