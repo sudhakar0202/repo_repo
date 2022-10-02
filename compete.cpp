@@ -4,6 +4,10 @@
 #include <math.h>
 #include <vector>
 #include <unordered_map>
+#include <cstdlib>
+// This constant can be avoided by explicitly
+// calculating height of Huffman Tree
+#define MAX_TREE_HT 100
 using namespace std;
 
 
@@ -32,14 +36,6 @@ int maxWater(int arr[], int n)
  
     return res;
 }
-// C++ program for Huffman Coding
-#include <iostream>
-#include <cstdlib>
-using namespace std;
-
-// This constant can be avoided by explicitly
-// calculating height of Huffman Tree
-#define MAX_TREE_HT 100
 
 // A Huffman tree node
 struct MinHeapNode {
